@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/sayanee/word-overlap.svg?branch=master)](https://travis-ci.org/sayanee/word-overlap) [![Coverage Status](https://img.shields.io/coveralls/sayanee/word-overlap.svg)](https://coveralls.io/r/sayanee/word-overlap) [![Dependency Status](https://gemnasium.com/sayanee/word-overlap.svg)](https://gemnasium.com/sayanee/word-overlap)
 
-Version: 1.0.0
+Version: 1.1.0
 
 > Check the number of words overlapping between 2 phrases or sentences
 
