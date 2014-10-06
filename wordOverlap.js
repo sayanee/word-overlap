@@ -39,6 +39,9 @@ exports.list = function list(phrase1, phrase2, options) {
 }
 
 function sanitize(word) {
+  // matches common punctuations:
+  // . , / ? # ! $ % ^ & * ; : { } = _ ` ~ ( )
+  // does not match hyphen: -
   var punctuationRegex = /[\.,\/\?#!$%\^&\*;:{}=_`~()]/g;
   return word.replace(punctuationRegex, '');
 }
