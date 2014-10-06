@@ -27,9 +27,7 @@ function removeCommonWords(words) {
 }
 
 function getWordsWithMinLen(minLen, word) {
-  if (word.length >= minLen) {
-    return true;
-  }
+  return word.length >= minLen;
 }
 
 if (process.env.NODE_ENV === 'test') {
