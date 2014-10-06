@@ -1,4 +1,4 @@
-#world-overlap
+#word-overlap
 
 Version: 1.0.0
 
@@ -16,7 +16,7 @@ npm install word-overlap
 ##Usage
 
 ```
-var overlap = require('overlap');
+var overlap = require('word-overlap');
 
 var sentence1 = 'A Hitchhiking Meetup in Betelgeuse by Ford Prefect';
 var sentence2 = 'A hitchhiking meetup meetup by the hitchhiker';
