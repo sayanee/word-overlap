@@ -1,41 +1,5 @@
 'use strict';
 
-function sanitize(word) {
-  var punctuationRegex = /[\.,\/\?#!$%\^&\*;:{}=_`~()]/g;
-  return word.replace(punctuationRegex, '');
-}
-
-function tokenize(word) {
-  return word.split(' ');
-}
-
-function onlyUnique(value, index, self) {
-  return self.indexOf(value) === index;
-}
-
-function removeCommonWords(words) {
-  var commonWords = [
-    'a', 'an', 'the', 'this', 'that', 'there', 'it',
-    'in', 'on', 'for', 'not', 'your', 'you', 'at',
-    'to', 'is', 'us', 'out', 'by', 'I' ];
-  // a, an, the, this, that, there, it
-  // on, for, not, your, you, at, to, is, us, out, by, I
-
-  return words.filter(function(element) {
-    return commonWords.indexOf(element) < 0;
-  });
-}
-
-function getWordsWithMinLen(minLen, word) {
-  return word.length >= minLen;
-}
-
-if (process.env.NODE_ENV === 'test') {
-  exports.sanitize = sanitize;
-  exports.tokenize = tokenize;
-  exports.getWordsWithMinLen = getWordsWithMinLen;
-}
-
 exports.list = function list(phrase1, phrase2, options) {
 
   options = options || {};
@@ -72,4 +36,40 @@ exports.list = function list(phrase1, phrase2, options) {
 
   return answer;
 
+}
+
+function sanitize(word) {
+  var punctuationRegex = /[\.,\/\?#!$%\^&\*;:{}=_`~()]/g;
+  return word.replace(punctuationRegex, '');
+}
+
+function tokenize(word) {
+  return word.split(' ');
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+function removeCommonWords(words) {
+  var commonWords = [
+    'a', 'an', 'the', 'this', 'that', 'there', 'it',
+    'in', 'on', 'for', 'not', 'your', 'you', 'at',
+    'to', 'is', 'us', 'out', 'by', 'I' ];
+  // a, an, the, this, that, there, it
+  // on, for, not, your, you, at, to, is, us, out, by, I
+
+  return words.filter(function(element) {
+    return commonWords.indexOf(element) < 0;
+  });
+}
+
+function getWordsWithMinLen(minLen, word) {
+  return word.length >= minLen;
+}
+
+if (process.env.NODE_ENV === 'test') {
+  exports.sanitize = sanitize;
+  exports.tokenize = tokenize;
+  exports.getWordsWithMinLen = getWordsWithMinLen;
 }
