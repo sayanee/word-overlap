@@ -1,5 +1,7 @@
 #world-overlap
 
+Version: 1.0.0
+
 > Check the number of words overlapping between 2 phrases or sentences
 
 Used in cases to check whether 2 titles / sentences / phrases are referring to the same context. E.g. 2 event names.
