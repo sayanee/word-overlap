@@ -18,7 +18,7 @@
   },
   "author": "Sayanee <sayanee@gmail.com> (www.sayan.ee)",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "blanket": "1.1.6",
     "chai": "1.9.2",
     "coveralls": "2.11.2",
