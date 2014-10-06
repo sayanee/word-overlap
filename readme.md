@@ -64,9 +64,6 @@ overlap(sentence1, sentence2, {
 
 ###option: add your common words to ignore
 
-Common words by default include: *a, an, the, this, that, there, it, in, on, for, not, your, you, at,
-to, is, us, out, by, I*
-
 ```js
 overlap(sentence1, sentence2, {
   ignoreCase: true,
