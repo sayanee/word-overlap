@@ -63,12 +63,10 @@
       compare2 = removeCommonWords(compare2);
     }
 
-    compare1.forEach(function(element1) {
-      compare2.forEach(function(element2) {
-        if (element1 === element2) {
-          answer.push(element1);
-        }
-      });
+    compare1.forEach(function(element) {
+      if (compare2.indexOf(element) > -1) {
+        answer.push(element);
+      }
     });
 
     answer = answer.filter(onlyUnique);
