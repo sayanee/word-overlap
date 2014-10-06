@@ -7,14 +7,14 @@
     "string",
     "words"
   ],
-  "main": "overlap.js",
+  "main": "wordOverlap.js",
   "scripts": {
-    "test": "grunt && NODE_ENV=test mocha overlapSpec.js && NODE_ENV=test mocha overlapSpec.js --require blanket -R html-cov > coverage.html",
+    "test": "grunt && NODE_ENV=test mocha wordOverlapSpec.js && NODE_ENV=test mocha wordOverlapSpec.js --require blanket -R html-cov > coverage.html",
     "start": "node example.js"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/sayanee/overlap.git"
+    "url": "git://github.com/sayanee/word-overlap.git"
   },
   "author": "Sayanee <sayanee@gmail.com> (www.sayan.ee)",
   "license": "MIT",
@@ -29,7 +29,7 @@
   },
   "config": {
     "blanket": {
-      "pattern": "overlapSpec.js"
+      "pattern": "wordOverlapSpec.js"
     }
   }
 }

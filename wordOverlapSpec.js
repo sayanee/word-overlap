@@ -2,7 +2,7 @@
   'use strict';
 
   var expect = require('chai').expect,
-    overlap = require('./overlap');
+    overlap = require('./wordOverlap');
 
   describe('Overlap', function() {
 

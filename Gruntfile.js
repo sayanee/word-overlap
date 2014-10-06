@@ -30,8 +30,8 @@ module.exports = function(grunt) {
       src: [
         'Gruntfile.js',
         'example.js',
-        'overlap.js',
-        'overlapSpec.js'
+        'wordOverlap.js',
+        'wordOverlapSpec.js'
       ],
       options: {
         config: '.jscsrc'
@@ -46,8 +46,8 @@ module.exports = function(grunt) {
         src: [
           'Gruntfile.js',
           'example.js',
-          'overlap.js',
-          'overlapSpec.js'
+          'wordOverlap.js',
+          'wordOverlapSpec.js'
         ]
       }
     },

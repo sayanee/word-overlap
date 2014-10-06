@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var overlap = require('./overlap'),
+  var overlap = require('./wordOverlap'),
     sentence1 = 'A Hitchhiking Meetup in Betelgeuse by Ford Prefect',
     sentence2 = 'A hitchhiking meetup meetup by the hitchhiker';
 
