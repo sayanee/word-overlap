@@ -10,7 +10,7 @@
   "main": "wordOverlap.js",
   "scripts": {
     "test": "grunt && NODE_ENV=test mocha wordOverlapSpec.js && NODE_ENV=test mocha wordOverlapSpec.js --require blanket -R html-cov > coverage.html",
-    "start": "node example.js"
+    "start": "node example.js && NODE_ENV=test YOURPACKAGE_COVERAGE=1 ./node_modules/.bin/mocha --require blanket --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -21,12 +21,14 @@
   "dependencies": {
     "blanket": "1.1.6",
     "chai": "1.9.2",
+    "coveralls": "2.11.2",
     "grunt": "0.4.5",
     "grunt-bump": "0.0.16",
     "grunt-contrib-jshint": "0.10.0",
     "grunt-jscs": "0.7.1",
     "grunt-jsonlint": "1.0.4",
-    "mocha": "1.21.4"
+    "mocha": "1.21.4",
+    "mocha-lcov-reporter": "0.0.1"
   },
   "config": {
     "blanket": {
