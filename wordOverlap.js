@@ -38,9 +38,7 @@ if (process.env.NODE_ENV === 'test') {
 
 exports.list = function list(phrase1, phrase2, options) {
 
-  if (!options) {
-    options = {};
-  }
+  options = options || {};
 
   options.ignoreCase = options.ignoreCase || false;
   options.minWordLength = options.minWordLength || 0;
