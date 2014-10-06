@@ -7,6 +7,7 @@ module.exports = function(phrase1, phrase2, options) {
   options.ignoreCase = options.ignoreCase || false;
   options.minWordLength = options.minWordLength || 0;
   options.ignoreCommonWords = options.ignoreCommonWords || false;
+  options.common = options.common || module.exports.COMMON_WORDS;
 
   if (options.ignoreCase) {
     phrase1 = phrase1.toLowerCase();
@@ -18,8 +19,8 @@ module.exports = function(phrase1, phrase2, options) {
     answer = [];
 
   if (options.ignoreCommonWords) {
-    compare1 = removeCommonWords(compare1);
-    compare2 = removeCommonWords(compare2);
+    compare1 = removeCommonWords(compare1, options.common);
+    compare2 = removeCommonWords(compare2, options.common);
   }
 
   compare1.forEach(function(element) {
@@ -38,6 +39,12 @@ module.exports = function(phrase1, phrase2, options) {
 
 }
 
+module.exports.COMMON_WORDS = Object.freeze([
+  'a', 'an', 'the', 'this', 'that', 'there', 'it',
+  'in', 'on', 'for', 'not', 'your', 'you', 'at',
+  'to', 'is', 'us', 'out', 'by', 'I'
+]);
+
 function sanitize(word) {
   // matches common punctuations:
   // . , / ? # ! $ % ^ & * ; : { } = _ ` ~ ( )
@@ -54,16 +61,9 @@ function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
 }
 
-function removeCommonWords(words) {
-  var commonWords = [
-    'a', 'an', 'the', 'this', 'that', 'there', 'it',
-    'in', 'on', 'for', 'not', 'your', 'you', 'at',
-    'to', 'is', 'us', 'out', 'by', 'I' ];
-  // a, an, the, this, that, there, it
-  // on, for, not, your, you, at, to, is, us, out, by, I
-
+function removeCommonWords(words, common) {
   return words.filter(function(element) {
-    return commonWords.indexOf(element) < 0;
+    return common.indexOf(element) < 0;
   });
 }
 
@@ -75,4 +75,5 @@ if (process.env.NODE_ENV === 'test') {
   module.exports.sanitize = sanitize;
   module.exports.tokenize = tokenize;
   module.exports.getWordsWithMinLen = getWordsWithMinLen;
+  module.exports.removeCommonWords = removeCommonWords;
 }

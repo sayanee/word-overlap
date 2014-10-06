@@ -19,7 +19,6 @@
         expect(overlap.sanitize(sentence)).to.equal('Hands-on C Programming');
         done();
       });
-
     });
 
     describe('Tokenize', function() {
@@ -38,7 +37,6 @@
         ]);
         done();
       });
-
     });
 
     describe('Get words with min length', function() {
@@ -65,6 +63,28 @@
           'CodeClub'
         ]);
 
+        done();
+      });
+    });
+
+    describe('Remove common words', function() {
+      it('returns an array', function(done) {
+        var words = [
+            'a',
+            'meetup',
+            'by',
+            'knitters'
+          ],
+          common = [
+            'a', 'an', 'the', 'this', 'that', 'there', 'it',
+            'in', 'on', 'for', 'not', 'your', 'you', 'at',
+            'to', 'is', 'us', 'out', 'by', 'I'
+          ];
+
+        expect(overlap.removeCommonWords(words, common)).to.not.include([
+          'a',
+          'by'
+        ]);
         done();
       });
     });

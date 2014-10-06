@@ -60,6 +60,7 @@ overlap(sentence1, sentence2, {
 });
 // [ 'hitchhiking', 'meetup' ]
 ```
+
 Try out the examples in file `example.js` with the command `node example.js`
 
 ##Contribute
