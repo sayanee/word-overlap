@@ -1,10 +1,18 @@
+.git*
+.DS_Store
 /node_modules/
 /npm-debug.log
 
+/.editorconfig
+/.gitattributes
 /.jshintrc
 /.jscsrc
 /.npmignore
 /.travis.yml
 
+CONTRIBUTING.md
+Gruntfile.js
+
+wordOverlapSpec.js
 /coverage.html
 /coverage
