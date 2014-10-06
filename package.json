@@ -10,7 +10,7 @@
   "main": "wordOverlap.js",
   "scripts": {
     "test": "grunt && NODE_ENV=test mocha wordOverlapSpec.js && NODE_ENV=test mocha wordOverlapSpec.js --require blanket -R html-cov > coverage.html",
-    "start": "node example.js && NODE_ENV=test YOURPACKAGE_COVERAGE=1 ./node_modules/.bin/mocha --require blanket --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js"
+    "start": "node example.js"
   },
   "repository": {
     "type": "git",
