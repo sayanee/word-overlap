@@ -27,14 +27,14 @@ var sentence2 = 'A hitchhiking meetup meetup by the hitchhiker';
 ###simple case
 
 ```js
-overlap.list(sentence1, sentence2);
+overlap(sentence1, sentence2);
 // [ 'A', 'by' ]
 ```
 
 ###option: ignore case
 
 ```js
-overlap.list(sentence1, sentence2, {
+overlap(sentence1, sentence2, {
    ignoreCase: true
 });
 // [ 'a', 'hitchhiking', 'meetup', 'by' ]
@@ -43,7 +43,7 @@ overlap.list(sentence1, sentence2, {
 ###option: min word length
 
 ```js
-overlap.list(sentence1, sentence2, {
+overlap(sentence1, sentence2, {
   ignoreCase: true,
   minWordLength: 2
 });
@@ -53,7 +53,7 @@ overlap.list(sentence1, sentence2, {
 ###option: ignore common words
 
 ```js
-overlap.list(sentence1, sentence2, {
+overlap(sentence1, sentence2, {
   ignoreCase: true,
   minWordLength: 2,
   ignoreCommonWords: true

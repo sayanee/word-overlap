@@ -76,7 +76,7 @@
           var sentence1 = '2 Hr Hands-On Money-Making Workshop by CodeClub',
             sentence2 = 'Hands-On App Creation Session for Your Business by CodeClub';
 
-          expect(overlap.list(sentence1, sentence2)).to.be.an('array');
+          expect(overlap(sentence1, sentence2)).to.be.an('array');
           done();
         });
 
@@ -84,7 +84,7 @@
           var sentence1 = '2 Hr Hands-On Money-Making Workshop by CodeClub',
             sentence2 = 'Hands-On App Creation Session for Your Business by CodeClub';
 
-          expect(overlap.list(sentence1, sentence2)).to.have.members([
+          expect(overlap(sentence1, sentence2)).to.have.members([
             'Hands-On',
             'by',
             'CodeClub'
@@ -96,8 +96,8 @@
           var sentence1 = 'C++ programming, Assembly programming',
             sentence2 = 'C++ programming, Assembly programming';
 
-          expect(overlap.list(sentence1, sentence2)).to.have.length(3);
-          expect(overlap.list(sentence1, sentence2)).to.include.members([
+          expect(overlap(sentence1, sentence2)).to.have.length(3);
+          expect(overlap(sentence1, sentence2)).to.include.members([
             'C++',
             'Assembly',
             'programming'
@@ -111,7 +111,7 @@
         it('returns overlapped words without common words ', function(done) {
           var sentence1 = '2 Hr Hands-On Money-Making Workshop by CodeClub',
             sentence2 = 'Hands-On App Creation Session for Your Business by CodeClub',
-            overlapList = overlap.list(sentence1, sentence2, {
+            overlapList = overlap(sentence1, sentence2, {
               ignoreCommonWords: true
             });
 
@@ -127,7 +127,7 @@
         it('returns overlapped words with minimum word length of 1 ', function(done) {
           var sentence1 = 'A B Hr Hands-On Money-Making Workshop by CodeClub',
             sentence2 = 'A B Hands-On App Creation Session for Your Business by CodeClub',
-            overlapList = overlap.list(sentence1, sentence2, {
+            overlapList = overlap(sentence1, sentence2, {
               minWordLength: 1
             });
 
@@ -146,7 +146,7 @@
         it('returns overlapped words with minimum word length of 2 ', function(done) {
           var sentence1 = 'A B Hr Hands-On Money-Making Workshop by CodeClub',
             sentence2 = 'A B Hr Hands-On App Creation Session for Your Business by CodeClub',
-            overlapList = overlap.list(sentence1, sentence2, {
+            overlapList = overlap(sentence1, sentence2, {
               minWordLength: 2
             });
 
@@ -167,7 +167,7 @@
         it('returns overlapped words with lowercase', function(done) {
           var sentence1 = 'Base and base',
             sentence2 = 'Base in base',
-            overlapList = overlap.list(sentence1, sentence2, {
+            overlapList = overlap(sentence1, sentence2, {
               ignoreCase: true
             });
 
@@ -179,7 +179,7 @@
         it('returns overlapped words without lowercase', function(done) {
           var sentence1 = 'Base and base',
             sentence2 = 'Base in base',
-            overlapList = overlap.list(sentence1, sentence2);
+            overlapList = overlap(sentence1, sentence2);
 
           expect(overlapList).to.include.members([ 'base', 'Base' ]);
           expect(overlapList).to.have.length(2);

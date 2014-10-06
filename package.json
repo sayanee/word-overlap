@@ -9,7 +9,7 @@
   ],
   "main": "wordOverlap.js",
   "scripts": {
-    "test": "grunt && NODE_ENV=test mocha wordOverlapSpec.js && NODE_ENV=test mocha wordOverlapSpec.js --require blanket -R html-cov > coverage.html",
+    "test": "grunt && NODE_ENV=test mocha wordOverlapSpec.js && NODE_ENV=test mocha wordOverlapSpec.js --require blanket -R html-cov > coverage.html && node example.js",
     "start": "node example.js"
   },
   "repository": {

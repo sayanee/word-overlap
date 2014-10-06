@@ -1,6 +1,6 @@
 'use strict';
 
-exports.list = function list(phrase1, phrase2, options) {
+module.exports = function(phrase1, phrase2, options) {
 
   options = options || {};
 
@@ -72,7 +72,7 @@ function getWordsWithMinLen(minLen, word) {
 }
 
 if (process.env.NODE_ENV === 'test') {
-  exports.sanitize = sanitize;
-  exports.tokenize = tokenize;
-  exports.getWordsWithMinLen = getWordsWithMinLen;
+  module.exports.sanitize = sanitize;
+  module.exports.tokenize = tokenize;
+  module.exports.getWordsWithMinLen = getWordsWithMinLen;
 }
