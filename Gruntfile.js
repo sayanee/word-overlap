@@ -6,17 +6,11 @@ module.exports = function(grunt) {
 
     bump: {
       options: {
-        files: [
-          'package.json',
-          'readme.md'
-        ],
+        files: [ 'package.json' ],
         updateConfigs: [],
         commit: true,
         commitMessage: 'Release v%VERSION%',
-        commitFiles: [
-          'package.json',
-          'readme.md'
-        ],
+        commitFiles: [ 'package.json' ],
         createTag: true,
         tagName: '%VERSION%',
         tagMessage: 'Version %VERSION%',
