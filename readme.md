@@ -1,4 +1,5 @@
-#word-overlap
+#word-overlap [![Dependency Status](https://gemnasium.com/sayanee/word-overlap.svg)](https://gemnasium.com/sayanee/word-overlap)
+
 
 Version: 1.0.0
 
