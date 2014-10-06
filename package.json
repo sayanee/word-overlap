@@ -1,0 +1,35 @@
+{
+  "name": "overlap",
+  "version": "1.0.0",
+  "description": "overlap of words in a sentence or phrase",
+  "keywords": [
+    "overlap",
+    "string",
+    "words"
+  ],
+  "main": "overlap.js",
+  "scripts": {
+    "test": "grunt && NODE_ENV=test mocha overlapSpec.js && NODE_ENV=test mocha overlapSpec.js --require blanket -R html-cov > coverage.html",
+    "start": "node example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sayanee/overlap.git"
+  },
+  "author": "Sayanee <sayanee@gmail.com> (www.sayan.ee)",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "1.9.2",
+    "grunt": "0.4.5",
+    "grunt-bump": "0.0.16",
+    "grunt-contrib-jshint": "0.10.0",
+    "grunt-jscs": "0.7.1",
+    "grunt-jsonlint": "1.0.4",
+    "mocha": "1.21.4"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "overlapSpec.js"
+    }
+  }
+}
