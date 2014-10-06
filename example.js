@@ -3,7 +3,7 @@
 
   var overlap = require('./wordOverlap'),
     sentence1 = 'A Hitchhiking Meetup in Betelgeuse by Ford Prefect',
-    sentence2 = 'A hitchhiking meetup meetup by the hitchhiker';
+    sentence2 = 'A hitchhiking meetup by the hitchhiker';
 
   console.log(overlap.list(sentence1, sentence2));
 
