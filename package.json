@@ -7,9 +7,9 @@
     "string",
     "words"
   ],
-  "main": "wordOverlap.js",
+  "main": "index.js",
   "scripts": {
-    "test": "grunt && NODE_ENV=test mocha wordOverlapSpec.js && NODE_ENV=test mocha wordOverlapSpec.js --require blanket -R html-cov > coverage.html && node example.js",
+    "test": "grunt && mocha test && mocha test --require blanket -R html-cov > coverage.html && node example.js",
     "start": "node example.js"
   },
   "repository": {
@@ -33,7 +33,10 @@
   },
   "config": {
     "blanket": {
-      "pattern": "wordOverlapSpec.js"
+      "pattern": [
+        "test/indexSpec.js",
+        "test/lib/libSpec.js"
+      ]
     }
   }
 }

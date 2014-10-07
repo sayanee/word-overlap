@@ -1,6 +1,6 @@
 'use strict';
 
-var overlap = require('./wordOverlap'),
+var overlap = require('./index'),
   colors = require('colors/safe'),
   sentence1 = 'A Hitchhiking Meetup in Betelgeuse by Ford Prefect',
   sentence2 = 'A hitchhiking meetup by the hitchhiker';
