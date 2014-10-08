@@ -59,7 +59,7 @@ overlap(sentence1, sentence2, {
   minWordLength: 2,
   ignoreCommonWords: true
 });
-// [ 'hitchhiking', 'meetup' ]
+// [ 'hitchhiking' ]
 ```
 
 ###option: add your common words to ignore
@@ -71,7 +71,7 @@ overlap(sentence1, sentence2, {
   ignoreCommonWords: true,
   common: [ 'meetup' ]
 });
-// [ 'hitchhiking', 'by' ]
+// [ 'hitchhiking' ]
 ```
 
 Try out the examples in file `example.js` with the command `node example.js`

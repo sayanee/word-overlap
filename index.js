@@ -9,7 +9,7 @@ module.exports = function(phrase1, phrase2, options) {
   options.ignoreCase = options.ignoreCase || false;
   options.minWordLength = options.minWordLength || 0;
   options.ignoreCommonWords = options.ignoreCommonWords || false;
-  options.common = options.common || module.exports.COMMON_WORDS;
+  options.common = options.common || null;
 
   if (options.ignoreCase) {
     phrase1 = phrase1.toLowerCase();
@@ -21,6 +21,11 @@ module.exports = function(phrase1, phrase2, options) {
     answer = [];
 
   if (options.ignoreCommonWords) {
+    compare1 = lib.removeCommonWords(compare1, module.exports.COMMON_WORDS);
+    compare2 = lib.removeCommonWords(compare2, module.exports.COMMON_WORDS);
+  }
+
+  if (options.common) {
     compare1 = lib.removeCommonWords(compare1, options.common);
     compare2 = lib.removeCommonWords(compare2, options.common);
   }

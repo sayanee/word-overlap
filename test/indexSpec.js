@@ -123,6 +123,31 @@
           done();
         });
       });
+
+      describe('With options ignoreCommonWords and common', function() {
+
+        it('does not return user defined commons words and common words', function(done) {
+          var sentence1 = 'Knitting class by Ellen at CornerClub',
+            sentence2 = 'Needle crafting class by Ellen at CornerClub',
+            overlapList = overlap(sentence1, sentence2, {
+              ignoreCommonWords: true,
+              common: [ 'class' ]
+            });
+
+          expect(overlapList).to.eql([
+            'Ellen',
+            'CornerClub'
+          ]);
+          expect(overlapList).to.not.eql([
+            'Ellen',
+            'CornerClub',
+            'by',
+            'at',
+            'class'
+          ]);
+          done();
+        });
+      });
     });
 
   });
