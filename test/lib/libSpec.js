@@ -14,6 +14,12 @@
         done();
       });
 
+      it('returns without punctuations: @', function(done) {
+        var sentence = 'See you @Mars';
+        expect(lib.sanitize(sentence)).to.equal('See you Mars');
+        done();
+      });
+
       it('keeps hyphens', function(done) {
         var sentence = 'Hands-on C Programming';
         expect(lib.sanitize(sentence)).to.equal('Hands-on C Programming');
