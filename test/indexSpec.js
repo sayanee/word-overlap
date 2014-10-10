@@ -148,6 +148,43 @@
           done();
         });
       });
+
+      describe('With option depluralize', function() {
+        it('returns overlapped words depluralized', function(done) {
+          var sentence1 = 'Base and bases',
+            sentence2 = 'Base in base',
+            overlapList = overlap(sentence1, sentence2, {
+              ignoreCase: true,
+              depluralize: true
+            });
+
+          expect(overlapList).to.include.members([ 'base' ]);
+          expect(overlapList).to.have.length(1);
+          done();
+        });
+
+        it('returns overlapped words depluralized and common', function(done) {
+          var sentence1 = 'Base and base',
+            sentence2 = 'Base in bases',
+            overlapList = overlap(sentence1, sentence2, {
+                depluralize: true,
+                common: [ 'base' ]
+            });
+
+          expect(overlapList).to.include.members([ 'Base' ]);
+          expect(overlapList).to.have.length(1);
+          done();
+        });
+
+        it('returns overlapped words without depluralization', function(done) {
+          var sentence1 = 'Base and bases',
+            sentence2 = 'Bases in base',
+            overlapList = overlap(sentence1, sentence2);
+
+          expect(overlapList).to.have.length(0);
+          done();
+        });
+      })
     });
 
   });

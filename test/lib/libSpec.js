@@ -95,6 +95,30 @@
       });
     });
 
+    describe('Depluralize words', function() {
+
+      it('returns an array with depluralized words', function(done) {
+        var words = [
+            'a',
+            'CS',
+            'courses',
+            'Club'
+          ],
+          ignorePlurals = [ 'CS' ],
+          answer = lib.depluralize(words, ignorePlurals);
+
+        expect(answer).to.be.an('array');
+        expect(answer).to.have.members([
+          'a',
+          'CS',
+          'course',
+          'Club'
+        ]);
+
+        done();
+      });
+    });
+
   });
 
 })();
