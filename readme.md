@@ -18,15 +18,15 @@ npm install word-overlap
 ```js
 var overlap = require('word-overlap');
 
-var sentence1 = 'A Hitchhiking Meetup in Betelgeuse by Ford Prefect';
-var sentence2 = 'A hitchhiking meetup meetup by the hitchhiker';
+var sentence1 = 'The Hitchhikings Meetup in Betelgeuse by Ford Prefect';
+var sentence2 = 'The hitchhikings meetups by the hitchhikers';
 ```
 
 ###simple case
 
 ```js
 overlap(sentence1, sentence2);
-// [ 'A', 'by' ]
+// [ 'The', 'by' ]
 ```
 
 ###option: ignore case
@@ -35,7 +35,7 @@ overlap(sentence1, sentence2);
 overlap(sentence1, sentence2, {
    ignoreCase: true
 });
-// [ 'a', 'hitchhiking', 'meetup', 'by' ]
+// [ 'the', 'hitchhikings', 'by' ]
 ```
 
 ###option: min word length
@@ -45,7 +45,7 @@ overlap(sentence1, sentence2, {
   ignoreCase: true,
   minWordLength: 2
 });
-// [ 'hitchhiking', 'meetup', 'by' ]
+// [ 'the', 'hitchhiking', 'by' ]
 ```
 
 ###option: ignore default common words
@@ -59,7 +59,7 @@ overlap(sentence1, sentence2, {
   minWordLength: 2,
   ignoreCommonWords: true
 });
-// [ 'hitchhiking' ]
+// [ 'hitchhikings' ]
 ```
 
 ###option: add your common words to ignore
@@ -69,9 +69,34 @@ overlap(sentence1, sentence2, {
   ignoreCase: true,
   minWordLength: 2,
   ignoreCommonWords: true,
-  common: [ 'meetup' ]
+  common: [ 'hitchhikings' ]
 });
-// [ 'hitchhiking' ]
+// [ ]
+```
+
+###option: depluralize words
+
+```js
+overlap(sentence1, sentence2, {
+  ignoreCase: true,
+  minWordLength: 2,
+  ignoreCommonWords: true,
+  depluralize: true
+});
+// [ 'hitchhiking', 'meetup' ]
+```
+
+###option: depluralize words with plurals to ignore
+
+```js
+overlap(sentence1, sentence2, {
+  ignoreCase: true,
+  minWordLength: 2,
+  ignoreCommonWords: true,
+  depluralize: true,
+  ignorePlurals: [ 'hitchhikings' ]
+});
+// [ 'hitchhikings', 'meetup' ]
 ```
 
 Try out the examples in file `example.js` with the command `node example.js`

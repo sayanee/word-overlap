@@ -2,8 +2,8 @@
 
 var overlap = require('./index'),
   colors = require('colors/safe'),
-  sentence1 = 'A Hitchhiking Meetup in Betelgeuse by Ford Prefect',
-  sentence2 = 'A hitchhiking meetup by the hitchhiker';
+  sentence1 = 'The Hitchhikings Meetup in Betelgeuse by Ford Prefect',
+  sentence2 = 'The hitchhikings meetups by the hitchhikers';
 
 console.log(colors.blue.underline('From example.js: '));
 
@@ -33,10 +33,27 @@ console.log(overlap(sentence1, sentence2, {
 }));
 
 console.log(colors.black('\nWith options ignoreCase, minWordLength, ignoreCommonWords, common words:'));
-console.log('overlap(sentence1, sentence2, {ignoreCase: true, minWordLength: 2, ignoreCommonWords: true, common: [ "meetup" ] })');
+console.log('overlap(sentence1, sentence2, {ignoreCase: true, minWordLength: 2, ignoreCommonWords: true, common: [ "hitchhikings" ] })');
 console.log(overlap(sentence1, sentence2, {
   ignoreCase: true,
   minWordLength: 2,
   ignoreCommonWords: true,
-  common: [ 'meetup' ]
+  common: [ 'hitchhikings' ]
+}));
+
+console.log(colors.black('\nWith options ignoreCase, ignoreCommonWords, depluralize:'));
+console.log('overlap(sentence1, sentence2, {ignoreCase: true, depluralize: true, ignoreCommonWords: true })');
+console.log(overlap(sentence1, sentence2, {
+  ignoreCase: true,
+  depluralize: true,
+  ignoreCommonWords: true
+}));
+
+console.log(colors.black('\nWith options ignoreCase, ignoreCommonWords, depluralize, ignoreplurals:'));
+console.log('overlap(sentence1, sentence2, {ignoreCase: true, depluralize: true, ignorePlurals: [ "hitchhikings" ], ignoreCommonWords: true })');
+console.log(overlap(sentence1, sentence2, {
+  ignoreCase: true,
+  depluralize: true,
+  ignorePlurals: [ 'hitchhikings' ],
+  ignoreCommonWords: true
 }));

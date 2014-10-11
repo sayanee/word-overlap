@@ -38,5 +38,8 @@
         "test/lib/libSpec.js"
       ]
     }
+  },
+  "dependencies": {
+    "pluralize": "~1.0.2"
   }
 }
