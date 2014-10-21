@@ -34,9 +34,10 @@
   "config": {
     "blanket": {
       "pattern": [
-        "test/indexSpec.js",
-        "test/lib/libSpec.js"
-      ]
+        "index.js",
+        "lib/lib.js"
+      ],
+      "data-cover-never": "node_modules"
     }
   },
   "dependencies": {
