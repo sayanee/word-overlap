@@ -12,6 +12,7 @@ module.exports = function(phrase1, phrase2, options) {
   options.common = options.common || null;
   options.depluralize = options.depluralize || false;
   options.ignorePlurals = options.ignorePlurals || [];
+  options.stemming = options.stemming || false;
 
   if (options.ignoreCase) {
     phrase1 = phrase1.toLowerCase();
@@ -36,6 +37,11 @@ module.exports = function(phrase1, phrase2, options) {
   if (options.common) {
     compare1 = lib.removeCommonWords(compare1, options.common);
     compare2 = lib.removeCommonWords(compare2, options.common);
+  }
+
+  if (options.stemming) {
+    compare1 = lib.stem(compare1);
+    compare2 = lib.stem(compare2);
   }
 
   compare1.forEach(function(element) {

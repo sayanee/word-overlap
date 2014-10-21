@@ -119,6 +119,29 @@
       });
     });
 
+    describe('Stem words', function() {
+
+      it('returns an array with stem words', function(done) {
+        var words = [
+            'programming',
+            'swimming',
+            'eating',
+            'traveled'
+          ],
+          answer = lib.stem(words);
+
+        expect(answer).to.be.an('array');
+        expect(answer).to.have.members([
+          'program',
+          'swim',
+          'eat',
+          'travel'
+        ]);
+
+        done();
+      });
+    });
+
   });
 
 })();

@@ -99,6 +99,19 @@ overlap(sentence1, sentence2, {
 // [ 'hitchhikings', 'meetup' ]
 ```
 
+###option: stemming
+
+```js
+var sentence1 = 'A programming course in SmallTalk';
+var sentence2 = 'Have you programmed in SmallTalk?';
+
+overlap(sentence1, sentence2, {
+  stemming: true,
+  ignoreCommonWords: true
+});
+// [ 'program', 'smalltalk' ]
+```
+
 Try out the examples in file `example.js` with the command `node example.js`
 
 ##Contribute

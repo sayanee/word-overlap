@@ -41,6 +41,7 @@
     }
   },
   "dependencies": {
+    "natural": "^0.1.28",
     "pluralize": "~1.0.2"
   }
 }

@@ -57,3 +57,14 @@ console.log(overlap(sentence1, sentence2, {
   ignorePlurals: [ 'hitchhikings' ],
   ignoreCommonWords: true
 }));
+
+console.log(colors.black('\nWith options stemming:'));
+console.log('var sentence1 = \'A programming course in SmallTalk\';');
+console.log('var sentence2 = \'Have you programmed in SmallTalk?\';');
+console.log('overlap(sentence1, sentence2, { stemming: true, ignoreCommonWords: true })');
+sentence1 = 'A programming course in SmallTalk';
+sentence2 = 'Have you programmed in SmallTalk?';
+console.log(overlap(sentence1, sentence2, {
+  stemming: true,
+  ignoreCommonWords: true
+}));

@@ -167,8 +167,8 @@
           var sentence1 = 'Base and base',
             sentence2 = 'Base in bases',
             overlapList = overlap(sentence1, sentence2, {
-                depluralize: true,
-                common: [ 'base' ]
+              depluralize: true,
+              common: [ 'base' ]
             });
 
           expect(overlapList).to.include.members([ 'Base' ]);
@@ -182,6 +182,24 @@
             overlapList = overlap(sentence1, sentence2);
 
           expect(overlapList).to.have.length(0);
+          done();
+        });
+      });
+
+      describe('With option stemming', function() {
+        it('returns the word stem or root word', function(done) {
+          var sentence1 = 'A programming course in SmallTalk',
+            sentence2 = 'Have you programmed in SmallTalk?',
+            overlapList = overlap(sentence1, sentence2, {
+              stemming: true,
+              ignoreCommonWords: true
+            });
+
+          expect(overlapList).to.include.members([
+            'program',
+            'smalltalk'
+          ]);
+
           done();
         });
       })
