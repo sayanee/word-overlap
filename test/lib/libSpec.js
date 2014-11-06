@@ -100,19 +100,19 @@
       it('returns an array with depluralized words', function(done) {
         var words = [
             'a',
-            'CS',
+            'computers',
             'courses',
-            'Club'
+            'club'
           ],
           ignorePlurals = [ 'CS' ],
           answer = lib.depluralize(words, ignorePlurals);
 
         expect(answer).to.be.an('array');
-        expect(answer).to.have.members([
+        expect(answer).to.include.members([
           'a',
-          'CS',
+          'computer',
           'course',
-          'Club'
+          'club'
         ]);
 
         done();
