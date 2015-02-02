@@ -63,5 +63,5 @@ module.exports = function(phrase1, phrase2, options) {
 module.exports.COMMON_WORDS = Object.freeze([
   'a', 'an', 'the', 'this', 'that', 'there', 'it',
   'in', 'on', 'for', 'not', 'your', 'you', 'at',
-  'to', 'is', 'us', 'out', 'by', 'I'
+  'to', 'is', 'us', 'out', 'by', 'I', 'and'
 ]);
