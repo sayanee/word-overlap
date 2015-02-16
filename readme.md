@@ -1,6 +1,6 @@
 #word-overlap
 
-[![NPM version](https://badge.fury.io/js/word-overlap.svg)](http://badge.fury.io/js/word-overlap) [![Build Status](https://travis-ci.org/sayanee/word-overlap.svg?branch=master)](https://travis-ci.org/sayanee/word-overlap) [![Coverage Status](https://img.shields.io/coveralls/sayanee/word-overlap.svg)](https://coveralls.io/r/sayanee/word-overlap) [![Dependency Status](https://gemnasium.com/sayanee/word-overlap.svg)](https://gemnasium.com/sayanee/word-overlap)
+[![NPM version](https://badge.fury.io/js/word-overlap.svg)](http://badge.fury.io/js/word-overlap) [![Build Status](https://travis-ci.org/sayanee/word-overlap.svg?branch=master)](https://travis-ci.org/sayanee/word-overlap) [![Coverage Status](https://img.shields.io/coveralls/sayanee/word-overlap.svg)](https://coveralls.io/r/sayanee/word-overlap) [![Code Climate](https://codeclimate.com/github/sayanee/word-overlap/badges/gpa.svg)](https://codeclimate.com/github/sayanee/word-overlap) [![Dependency Status](https://gemnasium.com/sayanee/word-overlap.svg)](https://gemnasium.com/sayanee/word-overlap)
 
 > Check the number of words overlapping between 2 phrases or sentences
 
