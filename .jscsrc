@@ -10,7 +10,7 @@
   ],
   "requireOperatorBeforeLineBreak": true,
   "requireParenthesesAroundIIFE": true,
-  "requireMultipleVarDecl": "onevar",
+  "disallowMultipleVarDecl": "strict",
   "requireCommaBeforeLineBreak": true,
   "requireCamelCaseOrUpperCaseIdentifiers": true,
   "requireDotNotation": "except_snake_case",

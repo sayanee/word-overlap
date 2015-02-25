@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  var expect = require('chai').expect,
-    lib = require('../../lib/lib');
+  var expect = require('chai').expect;
+  var lib = require('../../lib/lib');
 
   describe('Overlap', function() {
 
@@ -49,13 +49,13 @@
 
       it('returns an array with minimum length words', function(done) {
         var words = [
-            'a',
-            'CS',
-            'course',
-            'by',
-            'CodeClub'
-          ],
-          answer = words.filter(lib.getWordsWithMinLen.bind(this, 2));
+          'a',
+          'CS',
+          'course',
+          'by',
+          'CodeClub'
+        ];
+        var answer = words.filter(lib.getWordsWithMinLen.bind(this, 2));
 
         expect(answer).to.be.an('array');
         expect(answer).to.not.have.members([
@@ -76,16 +76,16 @@
     describe('Remove common words', function() {
       it('returns an array', function(done) {
         var words = [
-            'a',
-            'meetup',
-            'by',
-            'knitters'
-          ],
-          common = [
-            'a', 'an', 'the', 'this', 'that', 'there', 'it',
-            'in', 'on', 'for', 'not', 'your', 'you', 'at',
-            'to', 'is', 'us', 'out', 'by', 'I'
-          ];
+          'a',
+          'meetup',
+          'by',
+          'knitters'
+        ];
+        var common = [
+          'a', 'an', 'the', 'this', 'that', 'there', 'it',
+          'in', 'on', 'for', 'not', 'your', 'you', 'at',
+          'to', 'is', 'us', 'out', 'by', 'I'
+        ];
 
         expect(lib.removeCommonWords(words, common)).to.not.include([
           'a',
@@ -113,13 +113,13 @@
 
       it('returns an array with depluralized words', function(done) {
         var words = [
-            'a',
-            'computers',
-            'courses',
-            'club'
-          ],
-          ignorePlurals = [ 'CS' ],
-          answer = lib.depluralize(words, ignorePlurals);
+          'a',
+          'computers',
+          'courses',
+          'club'
+        ];
+        var ignorePlurals = [ 'CS' ];
+        var answer = lib.depluralize(words, ignorePlurals);
 
         expect(answer).to.be.an('array');
         expect(answer).to.include.members([
@@ -137,12 +137,12 @@
 
       it('returns an array with stem words', function(done) {
         var words = [
-            'programming',
-            'swimming',
-            'eating',
-            'traveled'
-          ],
-          answer = lib.stem(words);
+          'programming',
+          'swimming',
+          'eating',
+          'traveled'
+        ];
+        var answer = lib.stem(words);
 
         expect(answer).to.be.an('array');
         expect(answer).to.have.members([

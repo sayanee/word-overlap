@@ -20,9 +20,9 @@ module.exports = function(phrase1, phrase2, options) {
     phrase2 = phrase2.toLowerCase();
   }
 
-  var compare1 = lib.tokenize(lib.sanitize(phrase1)),
-    compare2 = lib.tokenize(lib.sanitize(phrase2)),
-    answer = [];
+  var compare1 = lib.tokenize(lib.sanitize(phrase1));
+  var compare2 = lib.tokenize(lib.sanitize(phrase2));
+  var answer = [];
 
   if (options.ignoreCommonWords) {
     compare1 = lib.removeCommonWords(compare1, module.exports.COMMON_WORDS);

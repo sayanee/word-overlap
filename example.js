@@ -1,9 +1,9 @@
 'use strict';
 
-var overlap = require('./index'),
-  colors = require('colors/safe'),
-  sentence1 = 'The Hitchhikings Meetup in Betelgeuse by Ford Prefect',
-  sentence2 = 'The hitchhikings meetups by the hitchhikers';
+var overlap = require('./index');
+var colors = require('colors/safe');
+var sentence1 = 'The Hitchhikings Meetup in Betelgeuse by Ford Prefect';
+var sentence2 = 'The hitchhikings meetups by the hitchhikers';
 
 console.log(colors.blue.underline('From example.js: '));
 
