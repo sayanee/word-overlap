@@ -20,15 +20,15 @@
   "license": "MIT",
   "devDependencies": {
     "blanket": "1.1.6",
-    "chai": "1.9.2",
+    "chai": "2.1.0",
     "colors": "1.0.3",
     "coveralls": "2.11.2",
     "grunt": "0.4.5",
-    "grunt-bump": "0.0.16",
-    "grunt-contrib-jshint": "0.10.0",
-    "grunt-jscs": "0.7.1",
+    "grunt-bump": "0.3.0",
+    "grunt-contrib-jshint": "0.11.0",
+    "grunt-jscs": "1.5.0",
     "grunt-jsonlint": "1.0.4",
-    "mocha": "1.21.5",
+    "mocha": "2.1.0",
     "mocha-lcov-reporter": "0.0.1"
   },
   "config": {
@@ -41,7 +41,7 @@
     }
   },
   "dependencies": {
-    "natural": "^0.1.28",
-    "pluralize": "~1.0.2"
+    "natural": "0.2.0",
+    "pluralize": "1.1.2"
   }
 }
