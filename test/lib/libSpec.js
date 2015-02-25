@@ -95,6 +95,20 @@
       });
     });
 
+    describe('Remove numbers', function() {
+      it('returns an array', function(done) {
+        var words = [
+          'welcome',
+          '2015'
+        ];
+
+        expect(lib.removeNumbers(words)).to.not.include([
+          '2015'
+        ]);
+        done();
+      });
+    });
+
     describe('Depluralize words', function() {
 
       it('returns an array with depluralized words', function(done) {

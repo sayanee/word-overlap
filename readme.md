@@ -10,7 +10,7 @@ Used in cases to check whether 2 titles / sentences / phrases are referring to t
 ##Install
 
 1. with [npm](https://www.npmjs.org/)
- 
+
 	```js
 	npm install word-overlap
 	```
@@ -20,25 +20,25 @@ Used in cases to check whether 2 titles / sentences / phrases are referring to t
 		```js
 		// in main.js
 		var overlap = require('word-overlap');
-		
+
 		var sentence1 = 'The Hitchhikings Meetup in Betelgeuse by Ford Prefect';
 		var sentence2 = 'The hitchhikings meetups by the hitchhikers';
-		
+
 		var reply = overlap(sentence1, sentence2, {
 		  ignoreCase: true,
 		  minWordLength: 2,
 		  ignoreCommonWords: true
 		});
-		
+
 		console.log(reply);
 		```
 	- in file `index.html`
-	
+
 		```html
 		<script src="build.js"></script>
 		```
 	- make the file `build.js`
-	
+
 		```shell
 		browserify main.js -o build.js --exclude WNdb --exclude lapack
 		```
@@ -92,6 +92,19 @@ overlap(sentence1, sentence2, {
   ignoreCommonWords: true
 });
 // [ 'hitchhikings' ]
+```
+
+###option: ignore number
+
+Ignore numbers such as: 5e3, 0xff, -1.1, 0, 1, 1.1, 10, 10.10, 100, '-1.1', etc.
+
+```js
+sentence1 = 'Welcome to 2015';
+sentence2 = '2015 Meetup for the year';
+console.log(overlap(sentence1, sentence2, {
+  ignoreNumber: true
+}));
+// [ ]
 ```
 
 ###option: add your common words to ignore

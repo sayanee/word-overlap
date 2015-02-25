@@ -68,3 +68,13 @@ console.log(overlap(sentence1, sentence2, {
   stemming: true,
   ignoreCommonWords: true
 }));
+
+console.log(colors.black('\nWith options ignore numbers:'));
+console.log('var sentence1 = \'Welcome to 2015\';');
+console.log('var sentence2 = \'2015 Meetup for the year\';');
+console.log('overlap(sentence1, sentence2, { ignoreNumber: true })');
+sentence1 = 'Welcome to 2015';
+sentence2 = '2015 Meetup for the year';
+console.log(overlap(sentence1, sentence2, {
+  ignoreNumber: true
+}));

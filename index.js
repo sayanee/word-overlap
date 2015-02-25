@@ -9,6 +9,7 @@ module.exports = function(phrase1, phrase2, options) {
   options.ignoreCase = options.ignoreCase || false;
   options.minWordLength = options.minWordLength || 0;
   options.ignoreCommonWords = options.ignoreCommonWords || false;
+  options.ignoreNumber = options.ignoreNumber || false;
   options.common = options.common || null;
   options.depluralize = options.depluralize || false;
   options.ignorePlurals = options.ignorePlurals || [];
@@ -26,6 +27,11 @@ module.exports = function(phrase1, phrase2, options) {
   if (options.ignoreCommonWords) {
     compare1 = lib.removeCommonWords(compare1, module.exports.COMMON_WORDS);
     compare2 = lib.removeCommonWords(compare2, module.exports.COMMON_WORDS);
+  }
+
+  if (options.ignoreNumber) {
+    compare1 = lib.removeNumbers(compare1);
+    compare2 = lib.removeNumbers(compare2);
   }
 
   if (options.depluralize) {
