@@ -60,6 +60,24 @@
         });
       });
 
+      describe('With option ignoreCommonWords: true', function() {
+        it('returns overlapped words numbers', function(done) {
+          var sentence1 = 'Welcome to 2015 ahead';
+          var sentence2 = '2015 Year ahead';
+          var overlapList = overlap(sentence1, sentence2, {
+            ignoreNumber: true
+          });
+
+          expect(overlapList).to.have.members([
+            'ahead'
+          ]);
+          expect(overlapList).to.not.have.members([
+            '2015'
+          ]);
+          done();
+        });
+      });
+
       describe('With option minWordLength', function() {
         it('returns overlapped words with minimum word length of 1 ', function(done) {
           var sentence1 = 'A B Hr Hands-On Money-Making Workshop by CodeClub';
