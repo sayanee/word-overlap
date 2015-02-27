@@ -45,6 +45,24 @@
       });
     });
 
+    describe('Remove empty string', function() {
+      var sentence = [
+        '',
+        'hello'
+      ];
+
+      it('returns an array', function(done) {
+        expect(sentence.filter(lib.removeEmptyString)).to.be.an('array');
+        expect(sentence.filter(lib.removeEmptyString)).to.have.members([
+          'hello'
+        ]);
+        expect(sentence.filter(lib.removeEmptyString)).to.not.have.members([
+          ''
+        ]);
+        done();
+      });
+    });
+
     describe('Get words with min length', function() {
 
       it('returns an array with minimum length words', function(done) {

@@ -29,6 +29,16 @@
           done();
         });
 
+        it('returns an array of overlapped words removing empty strings', function(done) {
+          var sentence1 = 'hello  there';
+          var sentence2 = 'hello  ';
+
+          expect(overlap(sentence1, sentence2)).to.have.members([
+            'hello'
+          ]);
+          done();
+        });
+
         it('returns an array of unique words', function(done) {
           var sentence1 = 'C++ programming, Assembly programming';
           var sentence2 = 'C++ programming, Assembly programming';
