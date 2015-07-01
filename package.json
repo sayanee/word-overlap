@@ -19,17 +19,17 @@
   "author": "Sayanee <sayanee@gmail.com> (www.sayan.ee)",
   "license": "MIT",
   "devDependencies": {
-    "blanket": "1.1.6",
-    "chai": "2.1.0",
-    "colors": "1.0.3",
+    "blanket": "1.1.7",
+    "chai": "3.0.0",
+    "colors": "1.1.2",
     "coveralls": "2.11.2",
     "grunt": "0.4.5",
-    "grunt-bump": "0.3.0",
-    "grunt-contrib-jshint": "0.11.0",
-    "grunt-jscs": "1.5.0",
+    "grunt-bump": "0.3.1",
+    "grunt-contrib-jshint": "0.11.2",
+    "grunt-jscs": "1.8.0",
     "grunt-jsonlint": "1.0.4",
-    "mocha": "2.1.0",
-    "mocha-lcov-reporter": "0.0.1"
+    "mocha": "2.2.5",
+    "mocha-lcov-reporter": "0.0.2"
   },
   "config": {
     "blanket": {
@@ -41,8 +41,8 @@
     }
   },
   "dependencies": {
-    "is-number": "1.1.0",
-    "natural": "0.2.0",
+    "is-number": "2.0.2",
+    "natural": "0.2.1",
     "pluralize": "1.1.2"
   }
 }
