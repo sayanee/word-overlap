@@ -1,6 +1,6 @@
 {
   "name": "word-overlap",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "overlap of words in a sentence or phrase to determine whether they are referring to the same context",
   "keywords": [
     "overlap",
