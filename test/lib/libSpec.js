@@ -8,40 +8,50 @@
 
     describe('Sanitize', function() {
 
-      it('returns without punctuations: ! or ?', function(done) {
+      it('returns without punctuations: ! or ?', function() {
         var sentence = 'Hello! How are you?';
         expect(lib.sanitize(sentence)).to.equal('Hello How are you');
-        done();
       });
 
-      it('returns without punctuations: @', function(done) {
+      it('returns without punctuations: @', function() {
         var sentence = 'See you @Mars';
         expect(lib.sanitize(sentence)).to.equal('See you Mars');
-        done();
       });
 
-      it('keeps hyphens', function(done) {
+      it('keeps hyphens', function() {
         var sentence = 'Hands-on C Programming';
-        expect(lib.sanitize(sentence)).to.equal('Hands-on C Programming');
-        done();
+        expect(lib.sanitize(sentence)).to.equal('Hands on C Programming');
+      });
+
+      it('separates a word with a dot', function() {
+        var sentence = 'name.com';
+        expect(lib.sanitize(sentence)).to.equal('name com');
+      });
+
+      it('removes a full stop', function() {
+        var sentence = 'name.';
+        expect(lib.sanitize(sentence)).to.equal('name');
+      });
+
+      it('replaces a hyphen with a space', function() {
+        var sentence = 'name-com';
+        expect(lib.sanitize(sentence)).to.equal('name com');
       });
     });
 
     describe('Tokenize', function() {
       var sentence = '1st Docker Meetup';
 
-      it('returns an array', function(done) {
+      it('returns an array', function() {
         expect(lib.tokenize(sentence)).to.be.an('array');
-        done();
       });
 
-      it('returns an array of words', function(done) {
+      it('returns an array of words', function() {
         expect(lib.tokenize(sentence)).to.have.members([
           '1st',
           'Docker',
           'Meetup'
         ]);
-        done();
       });
     });
 
@@ -51,7 +61,7 @@
         'hello'
       ];
 
-      it('returns an array', function(done) {
+      it('returns an array', function() {
         expect(sentence.filter(lib.removeEmptyString)).to.be.an('array');
         expect(sentence.filter(lib.removeEmptyString)).to.have.members([
           'hello'
@@ -59,13 +69,12 @@
         expect(sentence.filter(lib.removeEmptyString)).to.not.have.members([
           ''
         ]);
-        done();
       });
     });
 
     describe('Get words with min length', function() {
 
-      it('returns an array with minimum length words', function(done) {
+      it('returns an array with minimum length words', function() {
         var words = [
           'a',
           'CS',
@@ -86,13 +95,11 @@
           'course',
           'CodeClub'
         ]);
-
-        done();
       });
     });
 
     describe('Remove common words', function() {
-      it('returns an array', function(done) {
+      it('returns an array', function() {
         var words = [
           'a',
           'meetup',
@@ -109,12 +116,11 @@
           'a',
           'by'
         ]);
-        done();
       });
     });
 
     describe('Remove numbers', function() {
-      it('returns an array', function(done) {
+      it('returns an array', function() {
         var words = [
           'welcome',
           '2015'
@@ -123,13 +129,12 @@
         expect(lib.removeNumbers(words)).to.not.include([
           '2015'
         ]);
-        done();
       });
     });
 
     describe('Depluralize words', function() {
 
-      it('returns an array with depluralized words', function(done) {
+      it('returns an array with depluralized words', function() {
         var words = [
           'a',
           'computers',
@@ -146,14 +151,12 @@
           'course',
           'club'
         ]);
-
-        done();
       });
     });
 
     describe('Stem words', function() {
 
-      it('returns an array with stem words', function(done) {
+      it('returns an array with stem words', function() {
         var words = [
           'programming',
           'swimming',
@@ -169,11 +172,7 @@
           'eat',
           'travel'
         ]);
-
-        done();
       });
     });
-
   });
-
 })();

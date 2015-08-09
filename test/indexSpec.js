@@ -22,7 +22,8 @@
           var sentence2 = 'Hands-On App Creation Session for Your Business by CodeClub';
 
           expect(overlap(sentence1, sentence2)).to.have.members([
-            'Hands-On',
+            'Hands',
+            'On',
             'by',
             'CodeClub'
           ]);
@@ -63,7 +64,8 @@
           });
 
           expect(overlapList).to.have.members([
-            'Hands-On',
+            'Hands',
+            'On',
             'CodeClub'
           ]);
           done();
@@ -101,7 +103,8 @@
             'B'
           ]);
           expect(overlapList).to.include.members([
-            'Hands-On',
+            'Hands',
+            'On',
             'CodeClub'
           ]);
 
@@ -120,7 +123,8 @@
             'by'
           ]);
           expect(overlapList).to.include.members([
-            'Hands-On',
+            'Hands',
+            'On',
             'CodeClub'
           ]);
 
