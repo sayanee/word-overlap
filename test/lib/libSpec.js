@@ -24,8 +24,8 @@
       });
 
       it('separates a word with a dot', function() {
-        var sentence = 'name.com';
-        expect(lib.sanitize(sentence)).to.equal('name com');
+        var sentence = 'name.hello';
+        expect(lib.sanitize(sentence)).to.equal('name hello');
       });
 
       it('removes a full stop', function() {
@@ -36,6 +36,12 @@
       it('replaces a hyphen with a space', function() {
         var sentence = 'name-com';
         expect(lib.sanitize(sentence)).to.equal('name com');
+      });
+
+      it('returns without .com', function() {
+        var sentence = 'website.com';
+        console.log(lib.sanitize(sentence))
+        expect(lib.sanitize(sentence)).to.equal('website');
       });
     });
 

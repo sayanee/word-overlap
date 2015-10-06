@@ -53,6 +53,14 @@
 
           done();
         });
+
+        it('returns one overlap for a website', function() {
+          var sentence1 = 'name.com';
+          var sentence2 = 'name';
+
+          expect(overlap(sentence1, sentence2)).to.have.length(1);
+          expect(overlap(sentence1, sentence2)[0]).to.equal('name');
+        })
       });
 
       describe('With option ignoreCommonWords: true', function() {
